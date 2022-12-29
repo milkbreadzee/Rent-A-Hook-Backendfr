@@ -1,0 +1,80 @@
+//create user test
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name" : "riyasunil",
+    "email" : "riya@gmail.com",
+    "password" : "123456",
+    "confPassword": "123456",
+    "role" : "admin"
+}
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name" : "rosh",
+    "email" : "rosh@gmail.com",
+    "password" : "123456",
+    "confPassword": "123456",
+    "role" : "user"
+}
+
+###
+GET http://localhost:5000/users
+
+###login admin
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "riya@gmail.com",
+    "password" : "123456"
+}
+
+### login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email" : "rosh@gmail.com",
+    "password" : "123456"
+}
+
+###me
+GET http://localhost:5000/me
+
+###logout
+
+DELETE http://localhost:5000/logout
+
+###
+//get all products
+
+GET http://localhost:5000/products
+
+###
+//post a product
+
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name" : "tail fishing reel",
+    "price" : 35
+}
+
+###
+
+PATCH http://localhost:5000/products/ac81189d-ed0d-4a22-8521-35e0c6dd2404
+Content-Type: application/json
+
+{
+    "name" : "tail fishing reel -updated2",
+    "price" : 35
+}
+
+###
+DELETE  http://localhost:5000/products/ac81189d-ed0d-4a22-8521-35e0c6dd2404
